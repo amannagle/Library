@@ -56,7 +56,7 @@ footer button
     position: fixed;
     bottom: 0px;
     right: 0px;
-    background-color: blue;
+    background-color: #38bdf8;
     border-radius: 50%;
     height: 6.5rem;
     width: 6.5rem;
@@ -66,5 +66,6 @@ footer button
     justify-content: center;
     align-items: center;
     font-size: 6rem;
-    border: 10px solid blue;
+    border: 2px solid #38bdf8;
+    opacity: 0.67;
 }
