@@ -157,3 +157,15 @@ footer button
     border-radius: 10px;
     cursor: pointer;
 }
+
+.icons
+{
+
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: flex-end;
+    margin-top: 20px;
+    color: black;
+}
