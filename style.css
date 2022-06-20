@@ -169,3 +169,8 @@ footer button
     margin-top: 20px;
     color: black;
 }
+
+icon:hover
+{
+    transform: scale(1.5);
+}
