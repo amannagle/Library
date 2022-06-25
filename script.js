@@ -8,13 +8,16 @@ document.querySelector('.popup .close-btn').addEventListener('click',function()
     document.querySelector('.popup').classList.remove('active');
 });
 let Books=[];
-function Book(Title,Author,Pages,Read)
+class Book
 {
-    this.Title=Title;
-    this.Author=Author;
-    this.Pages=Pages;
-    this.Read=Read;
-    this.display="no";
+    constructor(Title,Author,Pages,Read)
+    {
+        this.Title=Title;
+        this.Author=Author;
+        this.Pages=Pages;
+        this.Read=Read;
+        this.display='no';
+    }
 }
 const submit = document.querySelector('#submit');
 submit.addEventListener('click',function()
