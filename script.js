@@ -116,6 +116,19 @@ function validateForm() {
   let book_error = document.querySelector('#title-error');
   let page_error = document.querySelector('#page-error');
   let author_error = document.querySelector('#author-error');
+  author_name.addEventListener('input',function(event){
+      if (author_name.validity.valid)
+      {
+          author_error.textContent='';
+          author_error.className='error';
+      }
+      else{
+          if (author_name.validity.valueMissing){
+              author_error.textContent="Author name cant be empty";
+              author_error.className='error active';
+          }
+      }
+  })
   pages.addEventListener('input',function(event)
   {
     if (pages.validity.valid) {
@@ -128,10 +141,12 @@ function validateForm() {
         if (pages.validity.valueMissing)
         {
             page_error.textContent="Pages cant be empty";
+            page_error.className='error active';
         }
-        else if(pages.value.tooShort)
+        else if(pages.validity.rangeUnderflow)
         {
-            page_error.textContent="Pages cant be less than zero";
+            page_error.textContent="Pages cant be less than one";
+            page_error.className='error active';
         }
       }
   })
@@ -149,6 +164,7 @@ function validateForm() {
       if (book_name.validity.valueMissing)
       {
           book_error.textContent="Book name cant be empty";
+          book_error.className='error active';
       }
     }
   });
