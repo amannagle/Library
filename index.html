@@ -27,18 +27,21 @@
         <div class="close-btn">&times;</div>
         <div class="form">
             <h2>Add A Book</h2>
-                <form id="myform">
+                <form id="myform" novalidate>
                     <div class="form-element">
                         <label for="title">Title</label>
-                        <input type="text" name="title" id="title">
+                        <input type="text" name="title" id="title" required>
+                        <span class="error" id="title-error"></span>
                     </div>
                     <div class="form-element">
                         <label for="author">Author</label>
-                        <input type="text" name="author" id="author">
+                        <input type="text" name="author" id="author" required>
+                        <span class="error" id="author-error"></span>
                     </div>
                     <div class="form-element">
                         <label for="pages">Pages</label>
-                        <input type="number" name="pages" id="pages">
+                        <input type="number" name="pages" id="pages" required min="1">
+                        <span class="error" id="page-error"></span>
                     </div>
                     <div class="form-element">
                         <input type="checkbox" name="hasread" id="hasread">
