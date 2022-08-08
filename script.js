@@ -1,12 +1,13 @@
 document.querySelector("footer .plus").addEventListener("click", function () {
   document.querySelector(".popup").classList.add("active");
 });
-validateForm();
+
 document
   .querySelector(".popup .close-btn")
   .addEventListener("click", function () {
     document.querySelector(".popup").classList.remove("active");
   });
+  validateForm();
 let Books = [];
 class Book {
   constructor(Title, Author, Pages, Read) {
@@ -23,6 +24,14 @@ submit.addEventListener("click", function () {
   const author = document.querySelector("#author").value;
   const pages = document.querySelector("#pages").value;
   const read = document.querySelector("#hasread").checked;
+  const book_name = document.querySelector("#title");
+  const author_name = document.querySelector("#author");
+  const page = document.querySelector("#pages");
+  if(!(book_name.validity.valid && author_name.validity.valid && page.validity.valid))
+  {
+    alert('invalid form data please check once again');
+    return;
+  }
   const book = new Book(title, author, pages, read);
   Books.push(book);
   document.querySelector(".popup").classList.remove("active");
